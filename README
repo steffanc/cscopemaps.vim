@@ -1,0 +1,28 @@
+cscopemaps.vim
+==============
+
+Cloned and modified from http://cscope.sourceforge.net/cscope_maps.vim to make a vundle package.
+
+cscope/vim key mappings
+
+The following maps all invoke one of the following cscope search types:
+  's'   symbol: find all references to the token under cursor
+  'g'   global: find global definition(s) of the token under cursor
+  'c'   calls:  find all calls to the function name under cursor
+  't'   text:   find all instances of the text under cursor
+  'e'   egrep:  egrep search for the word under cursor
+  'f'   file:   open the filename under cursor
+  'i'   includes: find files that include the filename under cursor
+  'd'   called: find functions that function under cursor calls
+
+The above maps can be called in three different ways.
+1) <C-\> + map:     open search result
+2) <C-\> + h + map: open search result in horizontal split
+3) <C-\> + v + map: open search result in vertical split
+
+You can use CTRL-T to go back to where you were before the search.  
+
+All of the maps involving the <cfile> macro use '^<cfile>$': this is so
+that searches over '#include <time.h>" return only references to
+'time.h', and not 'sys/time.h', etc. (by default cscope will return all
+files that contain 'time.h' as part of their name).
